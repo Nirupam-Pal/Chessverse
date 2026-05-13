@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 233 50% 2%;
+    --foreground: 40 20% 95%;
+    --card: 228 50% 6%;
+    --card-foreground: 40 20% 95%;
+    --popover: 228 50% 6%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 193 85% 62%;
+    --primary-foreground: 228 50% 6%;
+    --secondary: 228 50% 10%;
+    --secondary-foreground: 40 20% 95%;
+    --muted: 228 50% 10%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 275 89% 38%;
+    --accent-foreground: 40 20% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 228 30% 15%;
+    --input: 228 30% 15%;
+    --ring: 193 85% 62%;
+    --radius: 0.625rem;
+    --sidebar-background: 228 50% 6%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 193 85% 62%;
+    --sidebar-primary-foreground: 228 50% 6%;
+    --sidebar-accent: 228 50% 10%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 228 30% 15%;
+    --sidebar-ring: 193 85% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-void text-ivory font-body antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .liquid-glass {
+    background: rgba(10, 17, 40, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .liquid-glass-light {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #4CC9F0 0%, #7209B7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #4CC9F0, #7209B7);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .btn-glow:hover::before {
+    opacity: 1;
+  }
+  .glow-border {
+    border: 1px solid rgba(76, 201, 240, 0.2);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .glow-border:hover {
+    border-color: rgba(76, 201, 240, 0.5);
+    box-shadow: 0 0 20px rgba(76, 201, 240, 0.15);
+  }
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
